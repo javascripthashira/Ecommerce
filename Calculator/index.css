@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: fit-content;
+    height: 100%;
+    margin: auto;
+    padding:10PX;
+    border:1px gray solid;
+    margin-top: 10%;
+}
+
+.Buttons{
+  
+    margin-top: 5PX;
+    display: grid;
+    grid-template-columns: repeat(3,80px);
+    gap:10px
+}
+
+.num{
+    padding: 3PX;
+    border:1px gray solid;
+    text-align: center;
+}
+
+.operator {
+    padding: 3PX;
+    border:1px gray solid;
+    text-align: center;
+
+}

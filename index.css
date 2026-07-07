@@ -8,6 +8,11 @@
     background-color: black;
     color: white;
  }
+   body.dark .cards{
+    background-color: gray;
+    color: black;
+    border: 1px rgb(34, 33, 33) solid;
+ }
 
 
 
@@ -28,6 +33,22 @@
     width: 40px;
  }
 
+ .cart-items{
+   padding-bottom: 6PX;
+   display:flex;
+   gap:50px;
+   align-items: center;
+
+ }
+
+ .cart-items img{
+   width: 100px;
+ }
+
+ .productcart .cartitems{
+   position: absolute;
+   top:0;
+ }
  
 
  .productcart {
@@ -82,11 +103,7 @@
     border-radius: 5px;
  
  }
-  body.dark .cards{
-    background-color: gray;
-    color: black;
-    border: 1px rgb(34, 33, 33) solid;
- }
+
 
  .cards img{
     width: 100%;

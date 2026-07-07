@@ -4,6 +4,8 @@ const shopping = document.querySelector(".shopping")
 const productcards = document.querySelector(".productcards")
 const toggle = document.querySelector(".toggle")
 const img = document.querySelector(".img")
+const cartitems = document.querySelector(".cartitems")
+const total = document.querySelector(".total")
 
 
 shopping.addEventListener("click",function(){
@@ -68,17 +70,68 @@ for (let index = 0; index < products.length; index++) {
 
 const btn = document.querySelectorAll(".btn")
 
+const cart = []
+
+function RenderCart(){
+    cartitems.innerHTML =''
+
+    for (let index = 0; index < cart.length; index++) {
+      const items = cart[index]
+       const newdiv = document.createElement('div')
+       newdiv.classList.add("cart-items")
+
+       newdiv.innerHTML = `
+        <img src="${items.img}">
+        <span>${items.title}</span>
+        <span>${items.price}</span>
+       
+       `
+        cartitems.append(newdiv)
+
+        
+    }
+    
+
+}
+
+
 for (let index = 0; index < btn.length; index++) {
     const button = btn[index];
 
-    button.addEventListener("click",function(){
+    button.addEventListener("click",function(event){
         const quantity = document.querySelector(".quantity")
         let x = Number(quantity.textContent)
         x++
         quantity.textContent = x
+
+       
+
+        const cards = event.target.closest(".cards")
+        const img = cards.querySelector("img").getAttribute('src')
+        const title = cards.querySelector(".title").textContent
+        const price = cards.querySelector(".price").textContent
+         let sum = Number(total.textContent)
+        sum = sum + Number(price)
+        total.textContent = sum
+        console.log({title,price,img})
+        cart.push({title,price,img})
+
+
+        RenderCart()
+
+    
+
     })
     
 }
+
+
+
+// .closest will et the nearest parent container of an object that trigged an event
+
+
+
+
 
 
 
